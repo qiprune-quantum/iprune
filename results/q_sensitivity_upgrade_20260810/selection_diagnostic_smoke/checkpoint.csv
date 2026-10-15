@@ -1,0 +1,7 @@
+﻿config_id,dataset,delta,historical_reproduction_pass,kendall_vs_q1,matched_different_positions_vs_q1,matched_jaccard_vs_q1,matched_k,matched_k_boundary_margin,native_dual_certificate_count,native_q_threshold_count,nearest_threshold_margin,physical_pass_q_fail_count,q,q_pass_physical_fail_count,qbeta,rot_pool_sigma,seed,spearman_vs_q1,task
+classification_bas_seed42_delta0p01_sigma0p001,bas,0.01,True,1.0,0,1.0,36,,36,36,0.0029244400970839047,0,1.0,0,0.0,0.001,42,1.0,classification
+classification_bas_seed42_delta0p01_sigma0p001,bas,0.01,True,0.9968253968253968,0,1.0,36,,36,36,0.0029245642220303053,0,1.030454533953517,0,1.0,0.001,42,0.9997425997425997,classification
+classification_bas_seed42_delta0p01_sigma0p001,bas,0.01,True,0.9968253968253968,0,1.0,36,,36,36,0.0029252717784272425,0,1.0941742837052104,0,3.0,0.001,42,0.9997425997425997,classification
+classification_bas_seed42_delta0p01_sigma0p001,bas,0.01,True,0.9904761904761905,0,1.0,36,,36,36,0.0029276521644639193,0,1.1972173631218104,0,6.0,0.001,42,0.9992277992277993,classification
+classification_bas_seed42_delta0p01_sigma0p001,bas,0.01,True,0.9841269841269842,0,1.0,36,,36,36,0.002933685493915415,0,1.3498588075760034,0,10.0,0.001,42,0.9987129987129987,classification
+classification_bas_seed42_delta0p01_sigma0p001,bas,0.01,True,0.9555555555555556,0,1.0,36,,36,36,0.0029651509131380046,0,1.82211880039051,0,20.0,0.001,42,0.9943371943371944,classification

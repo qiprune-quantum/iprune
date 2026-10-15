@@ -105,8 +105,7 @@ def main() -> None:
             continue
         command = [
             sys.executable,
-            "-u",
-            str(SEED_RUNNER),
+            "-u", "-m", "scripts.experiments.run_vqe_qiprune_vs_gradient_seed",
             "--output_json",
             str(row_path),
             "--seed",

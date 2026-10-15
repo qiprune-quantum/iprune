@@ -1,0 +1,29 @@
+{
+  "experiment_family": "q_sensitivity_upgrade_20260810",
+  "protocol": "mnist49_q_geometry_matched_k_pilot",
+  "runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_q_matched_k_mnist49_sweep.py",
+  "seed_runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_q_matched_k_mnist49_seed.py",
+  "source_checkpoint": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\results\\supplementary_upgrade_20260807\\trained_qnn_true_pruning_mnist49_seed42_46\\trained_qnn_pruning_checkpoint.json",
+  "snapshot_dir": null,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "deltas": [
+    0.3,
+    0.5
+  ],
+  "qbetas": [
+    0,
+    1,
+    3,
+    6,
+    10,
+    20
+  ],
+  "selection_only": true,
+  "expected_rows": 60
+}

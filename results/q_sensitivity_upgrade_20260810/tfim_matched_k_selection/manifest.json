@@ -1,0 +1,28 @@
+{
+  "experiment_family": "q_sensitivity_upgrade_20260810",
+  "protocol": "tfim_q_geometry_matched_k_pilot",
+  "runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_q_matched_k_tfim_sweep.py",
+  "seed_runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_q_matched_k_tfim_seed.py",
+  "source_checkpoint": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\results\\supplementary_upgrade_20260807\\tfim_physical_baselines_seed42_46\\physical_gate_baselines_checkpoint.json",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "deltas": [
+    1.2,
+    1.5
+  ],
+  "qbetas": [
+    0,
+    1,
+    3,
+    6,
+    10,
+    20
+  ],
+  "selection_only": true,
+  "expected_rows": 60
+}

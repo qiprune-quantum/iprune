@@ -103,8 +103,7 @@ def main() -> None:
             continue
         command = [
             sys.executable,
-            "-u",
-            str(SEED_RUNNER),
+            "-u", "-m", "scripts.experiments.run_q_matched_k_mnist49_seed",
             "--output_json",
             str(output_path),
             "--source_checkpoint",

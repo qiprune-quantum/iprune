@@ -1,0 +1,34 @@
+{
+  "experiment_family": "supplementary_upgrade",
+  "protocol": "fair_baselines_matched_selected_forward_replacements",
+  "runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_fair_baseline_sweep_resumable.py",
+  "single_config_runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_baseline_comparison.py",
+  "grid": {
+    "tasks": [
+      "classification",
+      "vqe"
+    ],
+    "datasets": [
+      "mnist49",
+      "fashion_sb",
+      "bas"
+    ],
+    "deltas": [
+      0.01,
+      0.02
+    ],
+    "sigmas": [
+      0.001,
+      0.003,
+      0.006,
+      0.01
+    ],
+    "seeds": [
+      42
+    ]
+  },
+  "expected_configs": 32,
+  "expected_methods_per_config": 6,
+  "candidate_L_warning": "candidate_L is reported separately and is not a gate count",
+  "checkpoint_semantics": "one immutable JSON per completed configuration; flattened CSV has one row per method"
+}

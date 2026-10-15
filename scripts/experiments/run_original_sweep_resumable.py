@@ -102,8 +102,7 @@ def _configs(args: argparse.Namespace) -> Iterable[Dict[str, Any]]:
 def _command(args: argparse.Namespace, config: Dict[str, Any], row_path: Path) -> List[str]:
     command = [
         sys.executable,
-        "-u",
-        str(SINGLE_ROW_RUNNER),
+        "-u", "-m", "scripts.experiments.run_paper_protocol",
         "--task",
         str(config["task"]),
         "--device",

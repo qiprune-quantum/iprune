@@ -1,0 +1,26 @@
+{
+  "experiment_family": "supplementary_upgrade",
+  "protocol": "same_tfim_circuit_matched_K_qiprune_vs_real_integrated_gradient",
+  "runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_vqe_qiprune_vs_gradient_sweep.py",
+  "seed_runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_vqe_qiprune_vs_gradient_seed.py",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "deltas": [
+    0.8,
+    0.9,
+    1.0,
+    1.2,
+    1.5,
+    2.0
+  ],
+  "expected_seeds": 5,
+  "expected_rows": 60,
+  "vqe_steps": 40,
+  "finetune_steps": 40,
+  "gradient_points": 5
+}

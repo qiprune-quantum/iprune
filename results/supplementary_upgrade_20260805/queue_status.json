@@ -1,0 +1,14 @@
+{
+  "experiment_family": "supplementary_upgrade",
+  "queue": "fair_baselines_multiseed",
+  "wait_pid": 270948,
+  "next_seeds": [
+    43,
+    44,
+    45,
+    46
+  ],
+  "state": "complete",
+  "updated_at": "2026-08-06T04:06:45+08:00",
+  "exit_code": 0
+}

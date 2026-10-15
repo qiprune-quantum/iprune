@@ -1,0 +1,33 @@
+{
+  "experiment": "mnist49_task_conditioning_ablation",
+  "seeds": [
+    42
+  ],
+  "modes": [
+    "correct_mnist49_prefix",
+    "mismatched_fashion_prefix",
+    "haar_prefix",
+    "no_prefix"
+  ],
+  "q": 1.0,
+  "primary_ground_truth": "mean absolute test-logit drift",
+  "secondary_ground_truths": [
+    "prediction flip rate",
+    "absolute accuracy drift",
+    "mean pure-state trace distance"
+  ],
+  "correct_calibration_samples": 50,
+  "mismatched_fashion_samples": 50,
+  "haar_samples": 50,
+  "test_samples": 512,
+  "no_finetuning": true,
+  "seed_meta": [
+    {
+      "seed": 42,
+      "baseline_accuracy": 0.7734375,
+      "snapshot": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\results\\q_sensitivity_upgrade_20260810\\mnist49_matched_k_selection\\rows\\mnist49_seed42.json",
+      "test_samples": 512,
+      "calibration_M": 50
+    }
+  ]
+}

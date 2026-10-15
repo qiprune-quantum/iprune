@@ -7,7 +7,7 @@ import pandas as pd
 
 PROJECT = Path(__file__).resolve().parents[2]
 SOURCE = PROJECT / "results" / "lambda_noise_grid_20260812" / "tfim" / "adaptive_test_summary.csv"
-OUTPUT = PROJECT.parent / "Shao_Paper_4_v2" / "generated_lambda_noise_table_20260812"
+OUTPUT = PROJECT / "outputs" / "legacy_manuscript_assets" / "generated_lambda_noise_table_20260812"
 
 
 CHANNELS = {

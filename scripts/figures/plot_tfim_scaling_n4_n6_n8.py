@@ -14,7 +14,7 @@ from iprune.figure_qa.audit_panel_alignment import require_matplotlib_panel_alig
 
 
 PROJECT = Path(__file__).resolve().parents[2]
-BUNDLE = PROJECT / "n6_n8_lab_bundle_20260916"
+BUNDLE = PROJECT
 BLUE = "#2C6DB2"
 RED = "#D45B52"
 GREEN = "#4D9A57"

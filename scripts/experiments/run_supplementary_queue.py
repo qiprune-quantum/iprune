@@ -61,8 +61,7 @@ def main() -> None:
     print("[QUEUE] seed-42 finished; starting seeds 43-46", flush=True)
     command = [
         sys.executable,
-        "-u",
-        str(FAIR_SWEEP),
+        "-u", "-m", "scripts.experiments.run_fair_baseline_sweep_resumable",
         "--output_dir",
         str(args.output_dir.resolve()),
         "--seeds",

@@ -1,0 +1,88 @@
+{
+  "protocol": {
+    "design": "symmetric direct-q grid x pre-fixed Z/X Hamming bases",
+    "q_values": [
+      0.5488116360940265,
+      0.7408182206817179,
+      0.9048374180359595,
+      1.0,
+      1.1051709180756477,
+      1.3498588075760032,
+      1.8221188003905089
+    ],
+    "bases": [
+      "z",
+      "x"
+    ],
+    "delta": 1.5,
+    "target_k": 5,
+    "calibration_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "test_seeds": [
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "primary_metric": "matched-K one-shot absolute TFIM energy drift",
+    "selection_rule": "lowest calibration-seed mean primary metric; tie-break by |log(q)| then basis",
+    "no_finetuning": true,
+    "interpretation": "X basis is a mechanism-alignment diagnostic, not the original paper metric"
+  },
+  "selected_on_calibration": {
+    "method_key": "x:sym_q=1.822118800",
+    "basis": "x",
+    "q": 1.8221188003905089,
+    "seeds": 5,
+    "selection_changed_vs_q1": 3,
+    "spearman_single_energy_mean": 0.8622608695652174,
+    "spearman_single_energy_ci_low": 0.8116521739130433,
+    "spearman_single_energy_ci_high": 0.9034782608695651,
+    "spearman_single_trace_mean": 0.9132173913043478,
+    "spearman_single_trace_ci_low": 0.8743608695652173,
+    "spearman_single_trace_ci_high": 0.9513043478260869,
+    "top2_mean_single_energy_mean": 0.43724644917883027,
+    "top2_mean_single_energy_ci_low": 0.16210367736844145,
+    "top2_mean_single_energy_ci_high": 0.7123892209892191,
+    "top5_mean_single_energy_mean": 0.8860663978409068,
+    "top5_mean_single_energy_ci_low": 0.5535637656693886,
+    "top5_mean_single_energy_ci_high": 1.2724538454523737,
+    "matched_k_abs_energy_drift_mean": 2.610450251865168,
+    "matched_k_abs_energy_drift_ci_low": 2.17575216542778,
+    "matched_k_abs_energy_drift_ci_high": 3.0370884113792362,
+    "matched_k_trace_distance_mean": 0.765059134949683,
+    "matched_k_trace_distance_ci_low": 0.6857134605862966,
+    "matched_k_trace_distance_ci_high": 0.8491486565682875
+  },
+  "heldout_comparison_vs_q1": {
+    "method_key": "x:sym_q=1.822118800",
+    "baseline": "z:q=1",
+    "heldout_seeds": [
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "paired_energy_difference_mean": 0.0,
+    "paired_energy_difference_ci_low": 0.0,
+    "paired_energy_difference_ci_high": 0.0,
+    "wins": 0,
+    "losses": 0,
+    "ties": 5,
+    "exact_sign_flip_p": 1.0,
+    "differences": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+}

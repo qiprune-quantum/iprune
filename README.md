@@ -15,7 +15,7 @@ scripts/
   legacy/               historical sweep entry points, retained for provenance
 tests/                  existing regression tests
 runs/                   archived experiment JSON records, including pilots
-results/                historical checkpoint fixtures required by tests
+results/                archived additional experiments and test fixtures
 ```
 
 ## Environment
@@ -84,5 +84,49 @@ and argument parsing for the main runners. Training was not repeated during pack
 
 ## License and citation
 The authors have not yet selected a distribution license. No open-source rights
-are implied by this snapshot. Add the approved license, real repository URL and
-final publication identifier before public release.
+are implied by this snapshot. Add the approved license and final publication
+identifier before public release. Repository: https://github.com/qiprune-quantum/iprune.
+
+
+## Manuscript experiment records
+The table below distinguishes the paper's evidence from the historical and pilot
+records also retained for provenance. Numerical archives include JSON, plotting
+CSV inputs and the nine saved TFIM benchmark parameter checkpoints in NPZ format.
+They do not contain every intermediate state vector from every training step.
+
+| Manuscript result | Archived input under the repository root |
+|---|---|
+| Primary 12-seed TFIM scan and certificate tightness | `runs/tfim_pruning_phase_pilot_20260915/` |
+| Primary matched-count baselines | `runs/formal_tfim_d4_dynamic_q1_20260911/`, `runs/formal_mnist49_dynamic_q1_20260911/` |
+| Dynamic sequential objective baseline | `runs/tfim_dynamic_objective_baseline_20261015/` |
+| Prefix update and task-state mechanism | `runs/tfim_order_greedy_ablation_20260916/`, `runs/tfim_state_conditioning_ablation_20260916_v2/` |
+| QFI comparison and heatmap | `runs/qfi_iprune_gatelevel_n4_20260916/`, `runs/qfi_iprune_gatelevel_n6_20260916/` (including `gate_level_results.csv`) |
+| Multi-size matched-count comparison | `runs/tfim_scale_matched_baselines_20260923/`, `runs/tfim_n10_matched_baselines_20260923/` |
+| Physical q=1 size and connectivity scans | `runs/tfim_n4_physical_q1_20260924/`, `runs/tfim_n6_physical_q1_20260924/`, `runs/tfim_n8_physical_q1_20260924/`, `runs/tfim_n4_linear_physical_q1_20260924/`, `runs/tfim_n4_alltoall_physical_q1_20260924/` |
+| Path-budget and calibration-size controls | `runs/tfim_path_budget_ablation_20260916/`, `runs/tfim_calibration_size_ablation_20260916/`, `runs/iterative_b_mnist_calibration_size_pilot_20260911/` |
+| MNIST task-state and held-out audits | `results/task_conditioning_ablation_20260811/mnist49/`, `results/certificate_generalization_20260812/` |
+| Molecular energies at five geometries | `runs/h2_vqe_pilot_audited_20260913/`, `runs/h2_short_050A_audited_20260913/`, `runs/h2_mid_100A_audited_20260913/`, `runs/h2_stretched_150A_audited_20260913/`, `runs/h2_far_200A_audited_20260913/` |
+| Timing and finite-shot measurement audit | `runs/selection_cost_20260922/` (includes `checkpoints/`, overlap-audit and measurement-budget JSON) |
+| Ten-qubit depolarizing-noise test | `runs/tfim_n10_noise_minimal_20260923/` |
+| Physical versus historical q-weighted sensitivity | `runs/tfim_n4_physical_q1_20260924/`, `runs/tfim_n6_physical_q1_20260924/`, `runs/tfim_n8_physical_q1_20260924/` and historical phase records; inspect each file's q and acceptance metadata before pooling |
+
+The original scale-study data have been moved into `runs/`; no separate local
+lab-bundle directory is needed. Older `results/` subdirectories include candidate-pool
+experiments; they must not be substituted for physical deletion results.
+
+### Regenerate scientific figures from archived data
+```
+python -m scripts.figures.plot_qfi_iprune_predictive
+python -m scripts.figures.plot_pruning_heatmap_n4_n6
+python -m scripts.figures.plot_tfim_scaling_n4_n6_n8
+```
+### Reconstruct shot accounting
+```
+python -m scripts.analysis.analyze_tfim_measurement_budget --audit runs/selection_cost_20260922/shot_overlap_audit_delta_0p5.json --output outputs/measurement_budget.json
+```
+To repeat the synthetic fixed-path measurement trial using saved parameters:
+```
+python -m scripts.experiments.benchmark_shot_overlap --root runs/selection_cost_20260922 --delta 0.5 --shots 100 1000 10000 --trials 1000
+```
+This last command writes an audit file under the specified root. Use a copy of
+that directory if you wish to retain the bundled archive byte-for-byte.

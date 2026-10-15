@@ -153,7 +153,7 @@ def run(root: Path, sizes: list[int], seeds: list[int], delta: float, repeats: i
     for n in sizes:
         for seed in seeds:
             subprocess.run(
-                [sys.executable, __file__, "train", "--root", str(root),
+                [sys.executable, "-m", "scripts.experiments.benchmark_selection_cost", "train", "--root", str(root),
                  "--n", str(n), "--seed", str(seed), "--steps", str(steps)],
                 check=True,
             )
@@ -163,7 +163,7 @@ def run(root: Path, sizes: list[int], seeds: list[int], delta: float, repeats: i
                     if output.exists():
                         continue
                     subprocess.run(
-                        [sys.executable, __file__, "worker", "--root", str(root),
+                        [sys.executable, "-m", "scripts.experiments.benchmark_selection_cost", "worker", "--root", str(root),
                          "--n", str(n), "--seed", str(seed), "--delta", str(delta),
                          "--method", method, "--repeat", str(repeat)],
                         check=True,

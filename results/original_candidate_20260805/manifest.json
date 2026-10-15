@@ -1,0 +1,31 @@
+{
+  "protocol": "original_candidate_pool",
+  "runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_original_sweep_resumable.py",
+  "single_row_runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_paper_protocol.py",
+  "grid": {
+    "tasks": [
+      "classification",
+      "vqe"
+    ],
+    "datasets": [
+      "mnist49",
+      "fashion_sb",
+      "bas"
+    ],
+    "deltas": [
+      0.01,
+      0.02
+    ],
+    "sigmas": [
+      0.001,
+      0.003,
+      0.006,
+      0.01
+    ],
+    "seeds": [
+      42
+    ]
+  },
+  "expected_rows": 32,
+  "checkpoint_semantics": "one immutable row JSON per completed configuration"
+}

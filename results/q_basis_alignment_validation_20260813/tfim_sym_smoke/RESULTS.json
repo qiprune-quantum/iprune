@@ -1,0 +1,68 @@
+{
+  "protocol": {
+    "design": "symmetric direct-q grid x pre-fixed Z/X Hamming bases",
+    "q_values": [
+      0.7408182206817179,
+      1.0,
+      1.3498588075760032
+    ],
+    "bases": [
+      "z",
+      "x"
+    ],
+    "delta": 1.2,
+    "target_k": 5,
+    "calibration_seeds": [
+      42
+    ],
+    "test_seeds": [
+      43
+    ],
+    "primary_metric": "matched-K one-shot absolute TFIM energy drift",
+    "selection_rule": "lowest calibration-seed mean primary metric; tie-break by |log(q)| then basis",
+    "no_finetuning": true,
+    "interpretation": "X basis is a mechanism-alignment diagnostic, not the original paper metric"
+  },
+  "selected_on_calibration": {
+    "method_key": "x:q=1.349858808",
+    "basis": "x",
+    "q": 1.3498588075760032,
+    "seeds": 1,
+    "selection_changed_vs_q1": 1,
+    "spearman_single_energy_mean": 0.9278260869565217,
+    "spearman_single_energy_ci_low": 0.9278260869565217,
+    "spearman_single_energy_ci_high": 0.9278260869565217,
+    "spearman_single_trace_mean": 0.9565217391304346,
+    "spearman_single_trace_ci_low": 0.9565217391304346,
+    "spearman_single_trace_ci_high": 0.9565217391304346,
+    "top2_mean_single_energy_mean": 0.8346929899259341,
+    "top2_mean_single_energy_ci_low": 0.8346929899259341,
+    "top2_mean_single_energy_ci_high": 0.8346929899259341,
+    "top5_mean_single_energy_mean": 1.0956375534537202,
+    "top5_mean_single_energy_ci_low": 1.0956375534537202,
+    "top5_mean_single_energy_ci_high": 1.0956375534537202,
+    "matched_k_abs_energy_drift_mean": 3.5807723886760723,
+    "matched_k_abs_energy_drift_ci_low": 3.5807723886760723,
+    "matched_k_abs_energy_drift_ci_high": 3.5807723886760723,
+    "matched_k_trace_distance_mean": 0.8570485581181436,
+    "matched_k_trace_distance_ci_low": 0.8570485581181436,
+    "matched_k_trace_distance_ci_high": 0.8570485581181436
+  },
+  "heldout_comparison_vs_q1": {
+    "method_key": "x:q=1.349858808",
+    "baseline": "z:q=1",
+    "heldout_seeds": [
+      43
+    ],
+    "paired_energy_difference_mean": 0.0,
+    "paired_energy_difference_ci_low": 0.0,
+    "paired_energy_difference_ci_high": 0.0,
+    "wins": 0,
+    "losses": 0,
+    "ties": 1,
+    "exact_sign_flip_p": 1.0,
+    "differences": [
+      0.0
+    ]
+  }
+}

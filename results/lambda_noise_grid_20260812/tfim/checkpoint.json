@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "experiment_family": "lambda_noise_grid_20260812",
+    "protocol": "same_checkpoint_same_K_same_physical_certificate_lambda_grid_true_gate_deletion",
+    "seed": 42,
+    "source": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\results\\q_sensitivity_upgrade_20260810\\tfim_matched_k\\rows\\tfim_seed42.json",
+    "lambdas": [
+      0.2,
+      0.5,
+      0.8,
+      1.0
+    ],
+    "beta": 1.0,
+    "q_mapping": "q(lambda)=exp(beta*(1-lambda))",
+    "important_alias": "lambda=1 maps exactly to q=1; these are one control, not two methods",
+    "deltas": [
+      1.2,
+      1.5
+    ],
+    "channel_strengths": {
+      "depolarizing": [
+        0.001,
+        0.005,
+        0.01,
+        0.05
+      ],
+      "amplitude_damping": [
+        0.001,
+        0.01,
+        0.05
+      ]
+    },
+    "noise_placement": "after every retained gate on each touched wire",
+    "deletion_semantics": "deleting a gate also removes its associated noise event",
+    "selection_states": "ideal |0000> baseline prefix states",
+    "no_finetuning": true,
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ]
+  },
+  "completed_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "selection_rows": 80,
+  "result_rows": 560
+}

@@ -114,8 +114,7 @@ def main() -> None:
             continue
         command = [
             sys.executable,
-            "-u",
-            str(CONFIG_RUNNER),
+            "-u", "-m", "scripts.experiments.run_trained_qnn_true_pruning_seed",
             "--dataset",
             dataset,
             "--output_json",

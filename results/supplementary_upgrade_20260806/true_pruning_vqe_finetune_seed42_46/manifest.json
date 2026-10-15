@@ -1,0 +1,25 @@
+{
+  "experiment_family": "supplementary_upgrade",
+  "protocol": "tfim_true_identity_deletion_post_finetune_with_matched_full_control",
+  "runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_true_pruning_vqe_finetune_sweep.py",
+  "seed_runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_true_pruning_vqe_finetune_seed.py",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "deltas": [
+    0.8,
+    0.9,
+    1.0,
+    1.2,
+    1.5,
+    2.0
+  ],
+  "expected_seeds": 5,
+  "expected_rows": 30,
+  "vqe_steps": 40,
+  "finetune_steps": 40
+}

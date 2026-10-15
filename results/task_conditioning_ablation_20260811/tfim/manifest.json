@@ -1,0 +1,33 @@
+{
+  "experiment": "tfim_task_conditioning_state_ablation",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "modes": [
+    "correct_prefix",
+    "mismatched_0101_prefix",
+    "haar_prefix",
+    "no_prefix"
+  ],
+  "q": 1.0,
+  "primary_ground_truth": "absolute TFIM energy drift after actual single-gate deletion",
+  "secondary_ground_truth": "full-circuit pure-state trace distance",
+  "correct_state": "|0000>",
+  "mismatched_state": "|0101>",
+  "haar_policy": "one deterministic complex Haar state per seed, RNG seed 20260811+seed",
+  "no_prefix_policy": "score every position on the unpropagated |0000> state",
+  "ground_truth_source": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\results\\q_similarity_validation_20260811\\tfim\\position_level.csv",
+  "source_dir": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\results\\q_sensitivity_upgrade_20260810\\tfim_matched_k\\rows",
+  "no_finetuning": true,
+  "position_rows": 960,
+  "seed_rows": 40
+}

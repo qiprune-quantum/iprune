@@ -1,0 +1,5 @@
+﻿mode,max_score_change,mean_score_change,seeds_with_top2_change,seeds_with_top5_change,seeds_with_correlation_change
+correct_mnist49_prefix,0.0,0.0,0,0,0
+mismatched_fashion_prefix,0.05092660222887879,0.0009686211443011631,0,0,1
+haar_prefix,0.05095224248569663,0.0009794751251691795,0,0,1
+no_prefix,0.050948559552726036,0.000979631785819778,0,0,1

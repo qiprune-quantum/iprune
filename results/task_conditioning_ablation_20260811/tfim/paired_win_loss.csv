@@ -1,0 +1,5 @@
+﻿mode,correct_correlation_better,other_correlation_better,correlation_tie,top2_selection_changed,correct_top2_better,other_top2_better,top2_tie,top5_selection_changed,correct_top5_better,other_top5_better,top5_tie
+correct_prefix,0,0,10,0,0,0,10,0,0,0,10
+mismatched_0101_prefix,10,0,0,3,3,0,7,6,3,0,7
+haar_prefix,10,0,0,6,5,0,5,10,9,0,1
+no_prefix,10,0,0,7,7,0,3,10,10,0,0

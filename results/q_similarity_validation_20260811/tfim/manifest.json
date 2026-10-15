@@ -1,0 +1,38 @@
+{
+  "experiment": "tfim_q_similarity_predictive_validity",
+  "scientific_question": "Does q-weighted distance predict held-out full-circuit task impact of a single gate replacement better than q=1?",
+  "source_dir": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\results\\q_sensitivity_upgrade_20260810\\tfim_matched_k\\rows",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "qbetas": [
+    0.0,
+    1.0,
+    3.0,
+    6.0,
+    10.0,
+    20.0
+  ],
+  "top_ks": [
+    2,
+    5
+  ],
+  "ground_truth": {
+    "state_similarity": "full-circuit pure-state trace distance after deleting exactly one Rot gate",
+    "task_similarity": "absolute TFIM energy drift after deleting exactly one Rot gate"
+  },
+  "important_non_circularity": "The safe/low-impact target is measured by executing the modified full circuit; it is not defined by either q-distance or the physical certificate.",
+  "q1_identity_check": "For a single replacement in a noiseless unitary suffix, trace_distance = sin(q=1 angle).",
+  "q1_trace_identity_max_abs_error": 8.346795477010005e-14,
+  "position_rows": 1440,
+  "seed_summary_rows": 60
+}

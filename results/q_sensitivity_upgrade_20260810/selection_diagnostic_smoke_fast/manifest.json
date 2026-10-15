@@ -1,0 +1,26 @@
+{
+  "experiment_family": "q_sensitivity_upgrade_20260810",
+  "runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_q_sensitivity_selection_diagnostic.py",
+  "source_checkpoints": [
+    {
+      "path": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\results\\supplementary_upgrade_20260805\\fair_baselines_seed42\\fair_baseline_checkpoint.json",
+      "sha256": "eb93b11f84ed2234b413d3c7d790c594617d57a1aecc333290d4d8c99cfdb512"
+    },
+    {
+      "path": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\results\\supplementary_upgrade_20260805\\fair_baselines_seed43_46\\fair_baseline_checkpoint.json",
+      "sha256": "de564e3b4fca18fa57b85fe44548f260f9755f0f1cc495a9164abb9f539b2a9f"
+    }
+  ],
+  "source_configurations": 160,
+  "selected_configurations": 1,
+  "qbetas": [
+    0.0,
+    1.0,
+    3.0,
+    6.0,
+    10.0,
+    20.0
+  ],
+  "fixed_lambda_mapping": "lambda=clip(1-alpha*gamma,0,1); q=exp(qbeta*(1-lambda))",
+  "checkpoint_semantics": "one immutable JSON per completed historical configuration; checkpoint CSV is rebuilt from row JSON files"
+}

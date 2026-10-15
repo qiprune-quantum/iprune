@@ -1,0 +1,34 @@
+{
+  "n_qubits": 4,
+  "depth": 4,
+  "seeds": [
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009,
+    3010,
+    3011,
+    3012
+  ],
+  "deltas": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "workers": 2,
+  "vqe_steps": 6000,
+  "vqe_min_steps": 200,
+  "vqe_convergence_window": 20,
+  "vqe_convergence_tol": 5e-05,
+  "vqe_lr": 0.1,
+  "finetune_steps": 40,
+  "finetune_lr": 0.05,
+  "connectivity": "all_to_all",
+  "device": "default.qubit",
+  "qbeta": 0.0
+}

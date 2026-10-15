@@ -1,0 +1,14 @@
+{
+  "experiment": "mnist49_certificate_generalization_audit",
+  "seeds": [
+    42
+  ],
+  "deltas": [
+    0.2,
+    0.5
+  ],
+  "rows": 2,
+  "local_rows": 34,
+  "elapsed_seconds_this_invocation": 26.86405920982361,
+  "failures": []
+}

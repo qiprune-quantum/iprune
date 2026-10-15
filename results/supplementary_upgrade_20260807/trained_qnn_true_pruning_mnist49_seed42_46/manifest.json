@@ -1,0 +1,35 @@
+{
+  "experiment_family": "supplementary_upgrade",
+  "protocol": "trained_qnn_train_calibration_test_true_pruning_post_finetune",
+  "runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_trained_qnn_true_pruning_sweep.py",
+  "config_runner": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\run_trained_qnn_true_pruning_seed.py",
+  "datasets": [
+    "mnist49"
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "deltas": [
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.8
+  ],
+  "expected_configs": 5,
+  "expected_rows": 30,
+  "qnn_depth": 3,
+  "train_steps": 40,
+  "finetune_steps": 20,
+  "split": {
+    "train": 512,
+    "calibration": 256,
+    "test": 512,
+    "pruning_ensemble_M": 50
+  }
+}

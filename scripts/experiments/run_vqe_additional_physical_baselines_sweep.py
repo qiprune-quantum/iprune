@@ -132,8 +132,7 @@ def main() -> None:
             continue
         command = [
             sys.executable,
-            "-u",
-            str(SEED_RUNNER),
+            "-u", "-m", "scripts.experiments.run_vqe_additional_physical_baselines_seed",
             "--output_json",
             str(row_path),
             "--source_checkpoint",

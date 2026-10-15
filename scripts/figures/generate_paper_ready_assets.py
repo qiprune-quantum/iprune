@@ -10,7 +10,7 @@ import numpy as np
 
 
 PROJECT_DIR = Path(__file__).resolve().parents[2]
-PAPER_DIR = PROJECT_DIR.parent / "Shao_Paper_4_v2"
+PAPER_DIR = PROJECT_DIR / "outputs" / "legacy_manuscript_assets"
 OUTPUT_DIR = PAPER_DIR / "generated_results_20260806"
 
 CANDIDATE_PATH = (
