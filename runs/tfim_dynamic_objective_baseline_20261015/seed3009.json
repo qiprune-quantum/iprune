@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "protocol": "dynamic sequential direct-energy deletion; recompute every remaining one-gate deletion on the current circuit; choose minimum energy; match iPrune realized L; same recovery budget",
+    "source_json": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\runs\\formal_tfim_d4_dynamic_q1_20260911\\seed3009.json",
+    "seed": 3009,
+    "n_qubits": 4,
+    "vqe_depth": 4,
+    "baseline_circuit_signature": "82730bbdb243be50",
+    "vqe_steps_run": 591,
+    "vqe_converged": true
+  },
+  "results": [
+    {
+      "method": "dynamic_sequential_energy_probe_matched_l",
+      "deleted_pos_ids": [
+        9,
+        11,
+        19
+      ],
+      "pruned_positions": 3,
+      "kept_positions": 29,
+      "actual_gate_prune_ratio": 0.09375,
+      "gate_count_before": 32,
+      "gate_count_after": 29,
+      "one_qubit_gate_count_before": 16,
+      "one_qubit_gate_count_after": 13,
+      "two_qubit_gate_count_before": 16,
+      "two_qubit_gate_count_after": 16,
+      "logical_depth_before": 20,
+      "logical_depth_after": 20,
+      "trainable_rotations_after": 13,
+      "energy_initial": 0.29247091520046115,
+      "energy_original_optimized": -5.225799222269382,
+      "energy_full_control_after_extra_steps": -5.225844765538526,
+      "energy_pruned_one_shot": -4.289384770459073,
+      "energy_pruned_finetuned": -5.178415466347552,
+      "abs_dE_one_shot_vs_original": 0.9364144518103092,
+      "abs_dE_finetuned_vs_original": 0.04738375592183086,
+      "energy_gap_one_shot_vs_control": 0.9364599950794537,
+      "energy_gap_finetuned_vs_control": 0.04742929919097438,
+      "recovery_fraction_vs_control": 0.9493525623729925,
+      "trace_dist_one_shot_vs_original_mean": 0.42750965278435854,
+      "trace_dist_one_shot_vs_original_max": 0.42750965278435854,
+      "trace_dist_finetuned_vs_control_mean": 0.0998025884193948,
+      "trace_dist_finetuned_vs_control_max": 0.0998025884193948,
+      "baseline_circuit_signature": "82730bbdb243be50",
+      "pruned_circuit_signature": "7d497185f9bcd8e5",
+      "finetuned_circuit_signature": "5a2f32c1f9e4958b",
+      "experiment": "tfim_dynamic_sequential_objective_baseline",
+      "seed": 3009,
+      "n_qubits": 4,
+      "vqe_depth": 4,
+      "delta": 0.8,
+      "matched_delete_count": 3,
+      "selection_time_ms": 233.7748000281863,
+      "selection_audit": [
+        {
+          "step": 1,
+          "energy_before": -5.225799222269382,
+          "chosen_position": 11,
+          "energy_after": -5.081302340096903,
+          "objective_increase": 0.14449688217247925,
+          "candidate_count": 16
+        },
+        {
+          "step": 2,
+          "energy_before": -5.081302340096903,
+          "chosen_position": 9,
+          "energy_after": -4.602637131036751,
+          "objective_increase": 0.47866520906015175,
+          "candidate_count": 15
+        },
+        {
+          "step": 3,
+          "energy_before": -4.602637131036751,
+          "chosen_position": 19,
+          "energy_after": -4.289384770459073,
+          "objective_increase": 0.31325236057767825,
+          "candidate_count": 14
+        }
+      ]
+    },
+    {
+      "method": "dynamic_sequential_energy_probe_matched_l",
+      "deleted_pos_ids": [
+        9,
+        11,
+        19,
+        27
+      ],
+      "pruned_positions": 4,
+      "kept_positions": 28,
+      "actual_gate_prune_ratio": 0.125,
+      "gate_count_before": 32,
+      "gate_count_after": 28,
+      "one_qubit_gate_count_before": 16,
+      "one_qubit_gate_count_after": 12,
+      "two_qubit_gate_count_before": 16,
+      "two_qubit_gate_count_after": 16,
+      "logical_depth_before": 20,
+      "logical_depth_after": 20,
+      "trainable_rotations_after": 12,
+      "energy_initial": 0.29247091520046115,
+      "energy_original_optimized": -5.225799222269382,
+      "energy_full_control_after_extra_steps": -5.225844765538526,
+      "energy_pruned_one_shot": -3.868028239560754,
+      "energy_pruned_finetuned": -5.011259170253325,
+      "abs_dE_one_shot_vs_original": 1.3577709827086273,
+      "abs_dE_finetuned_vs_original": 0.21454005201605675,
+      "energy_gap_one_shot_vs_control": 1.3578165259777721,
+      "energy_gap_finetuned_vs_control": 0.21458559528520116,
+      "recovery_fraction_vs_control": 0.8419627459382432,
+      "trace_dist_one_shot_vs_original_mean": 0.5301344787349594,
+      "trace_dist_one_shot_vs_original_max": 0.5301344787349594,
+      "trace_dist_finetuned_vs_control_mean": 0.2359220231935196,
+      "trace_dist_finetuned_vs_control_max": 0.2359220231935196,
+      "baseline_circuit_signature": "82730bbdb243be50",
+      "pruned_circuit_signature": "040f7e82d0944407",
+      "finetuned_circuit_signature": "38320379cbcefd7f",
+      "experiment": "tfim_dynamic_sequential_objective_baseline",
+      "seed": 3009,
+      "n_qubits": 4,
+      "vqe_depth": 4,
+      "delta": 1.0,
+      "matched_delete_count": 4,
+      "selection_time_ms": 307.3757000383921,
+      "selection_audit": [
+        {
+          "step": 1,
+          "energy_before": -5.225799222269382,
+          "chosen_position": 11,
+          "energy_after": -5.081302340096903,
+          "objective_increase": 0.14449688217247925,
+          "candidate_count": 16
+        },
+        {
+          "step": 2,
+          "energy_before": -5.081302340096903,
+          "chosen_position": 9,
+          "energy_after": -4.602637131036751,
+          "objective_increase": 0.47866520906015175,
+          "candidate_count": 15
+        },
+        {
+          "step": 3,
+          "energy_before": -4.602637131036751,
+          "chosen_position": 19,
+          "energy_after": -4.289384770459073,
+          "objective_increase": 0.31325236057767825,
+          "candidate_count": 14
+        },
+        {
+          "step": 4,
+          "energy_before": -4.289384770459073,
+          "chosen_position": 27,
+          "energy_after": -3.8680282395607546,
+          "objective_increase": 0.42135653089831804,
+          "candidate_count": 13
+        }
+      ]
+    },
+    {
+      "method": "dynamic_sequential_energy_probe_matched_l",
+      "deleted_pos_ids": [
+        0,
+        9,
+        10,
+        11,
+        19,
+        27
+      ],
+      "pruned_positions": 6,
+      "kept_positions": 26,
+      "actual_gate_prune_ratio": 0.1875,
+      "gate_count_before": 32,
+      "gate_count_after": 26,
+      "one_qubit_gate_count_before": 16,
+      "one_qubit_gate_count_after": 10,
+      "two_qubit_gate_count_before": 16,
+      "two_qubit_gate_count_after": 16,
+      "logical_depth_before": 20,
+      "logical_depth_after": 20,
+      "trainable_rotations_after": 10,
+      "energy_initial": 0.29247091520046115,
+      "energy_original_optimized": -5.225799222269382,
+      "energy_full_control_after_extra_steps": -5.225844765538526,
+      "energy_pruned_one_shot": -2.448261674044426,
+      "energy_pruned_finetuned": -4.943497925228728,
+      "abs_dE_one_shot_vs_original": 2.777537548224956,
+      "abs_dE_finetuned_vs_original": 0.2823012970406529,
+      "energy_gap_one_shot_vs_control": 2.7775830914941,
+      "energy_gap_finetuned_vs_control": 0.2823468403097982,
+      "recovery_fraction_vs_control": 0.8983480129993447,
+      "trace_dist_one_shot_vs_original_mean": 0.70272972945922,
+      "trace_dist_one_shot_vs_original_max": 0.70272972945922,
+      "trace_dist_finetuned_vs_control_mean": 0.27510065276995976,
+      "trace_dist_finetuned_vs_control_max": 0.27510065276995976,
+      "baseline_circuit_signature": "82730bbdb243be50",
+      "pruned_circuit_signature": "a50122e221549473",
+      "finetuned_circuit_signature": "5120cb5767ccdf38",
+      "experiment": "tfim_dynamic_sequential_objective_baseline",
+      "seed": 3009,
+      "n_qubits": 4,
+      "vqe_depth": 4,
+      "delta": 1.2,
+      "matched_delete_count": 6,
+      "selection_time_ms": 440.1214999961667,
+      "selection_audit": [
+        {
+          "step": 1,
+          "energy_before": -5.225799222269382,
+          "chosen_position": 11,
+          "energy_after": -5.081302340096903,
+          "objective_increase": 0.14449688217247925,
+          "candidate_count": 16
+        },
+        {
+          "step": 2,
+          "energy_before": -5.081302340096903,
+          "chosen_position": 9,
+          "energy_after": -4.602637131036751,
+          "objective_increase": 0.47866520906015175,
+          "candidate_count": 15
+        },
+        {
+          "step": 3,
+          "energy_before": -4.602637131036751,
+          "chosen_position": 19,
+          "energy_after": -4.289384770459073,
+          "objective_increase": 0.31325236057767825,
+          "candidate_count": 14
+        },
+        {
+          "step": 4,
+          "energy_before": -4.289384770459073,
+          "chosen_position": 27,
+          "energy_after": -3.8680282395607546,
+          "objective_increase": 0.42135653089831804,
+          "candidate_count": 13
+        },
+        {
+          "step": 5,
+          "energy_before": -3.8680282395607546,
+          "chosen_position": 0,
+          "energy_after": -3.108895758999931,
+          "objective_increase": 0.7591324805608237,
+          "candidate_count": 12
+        },
+        {
+          "step": 6,
+          "energy_before": -3.108895758999931,
+          "chosen_position": 10,
+          "energy_after": -2.448261674044426,
+          "objective_increase": 0.6606340849555048,
+          "candidate_count": 11
+        }
+      ]
+    }
+  ]
+}

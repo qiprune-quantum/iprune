@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "protocol": "tfim_cumulative_path_budget_extension",
+    "seed": 3001,
+    "n_qubits": 4,
+    "vqe_converged": true,
+    "vqe_steps_run": 724,
+    "deltas": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "budgets": [
+      null,
+      0.5,
+      1.0,
+      1.5
+    ]
+  },
+  "results": [
+    {
+      "seed": 3001,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "path_budget": null,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.08418251964248569,
+      "actual_trace_distance_max": 0.31668566834280915,
+      "path_trace_sum_max": 0.4446429083331339,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "path_budget": 0.5,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.08418251964248569,
+      "actual_trace_distance_max": 0.31668566834280915,
+      "path_trace_sum_max": 0.4446429083331339,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "path_budget": 1.0,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.08418251964248569,
+      "actual_trace_distance_max": 0.31668566834280915,
+      "path_trace_sum_max": 0.4446429083331339,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "path_budget": 1.5,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.08418251964248569,
+      "actual_trace_distance_max": 0.31668566834280915,
+      "path_trace_sum_max": 0.4446429083331339,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "path_budget": null,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.08418251964248569,
+      "actual_trace_distance_max": 0.31668566834280915,
+      "path_trace_sum_max": 0.4446429083331339,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "path_budget": 0.5,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.08418251964248569,
+      "actual_trace_distance_max": 0.31668566834280915,
+      "path_trace_sum_max": 0.4446429083331339,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "path_budget": 1.0,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.08418251964248569,
+      "actual_trace_distance_max": 0.31668566834280915,
+      "path_trace_sum_max": 0.4446429083331339,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "path_budget": 1.5,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.08418251964248569,
+      "actual_trace_distance_max": 0.31668566834280915,
+      "path_trace_sum_max": 0.4446429083331339,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "path_budget": null,
+      "deleted_count": 5,
+      "deleted_pos_ids": [
+        1,
+        8,
+        24,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 1.7472548350376842,
+      "actual_trace_distance_max": 0.8718589812649156,
+      "path_trace_sum_max": 1.748196945713014,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "path_budget": 0.5,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        25,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.08418251964248569,
+      "actual_trace_distance_max": 0.31668566834280915,
+      "path_trace_sum_max": 0.4446429083331339,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "path_budget": 1.0,
+      "deleted_count": 3,
+      "deleted_pos_ids": [
+        1,
+        8,
+        25
+      ],
+      "energy_gap_finetuned_vs_control": 0.15803623578601034,
+      "actual_trace_distance_max": 0.5926619536345231,
+      "path_trace_sum_max": 0.7435874424374881,
+      "physical_threshold_violations": 0
+    },
+    {
+      "seed": 3001,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "path_budget": 1.5,
+      "deleted_count": 4,
+      "deleted_pos_ids": [
+        1,
+        8,
+        24,
+        25
+      ],
+      "energy_gap_finetuned_vs_control": 1.823059966137401,
+      "actual_trace_distance_max": 0.8528653631197703,
+      "path_trace_sum_max": 1.302720771459574,
+      "physical_threshold_violations": 0
+    }
+  ]
+}

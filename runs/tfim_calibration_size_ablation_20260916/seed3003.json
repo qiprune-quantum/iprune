@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "protocol": "tfim_calibration_size_sensitivity",
+    "seed": 3003,
+    "n_qubits": 4,
+    "vqe_converged": true,
+    "vqe_steps_run": 398,
+    "deltas": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "calibration_sizes": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  "results": [
+    {
+      "seed": 3003,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "calibration_size": 1,
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        10
+      ],
+      "energy_gap_finetuned_vs_control": 0.013071184769031241,
+      "actual_trace_distance_max": 0.14237130625058372,
+      "path_trace_sum_max": 0.14237130625058145,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "calibration_size": 2,
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        10
+      ],
+      "energy_gap_finetuned_vs_control": 0.013071184769031241,
+      "actual_trace_distance_max": 0.14237130625058372,
+      "path_trace_sum_max": 0.14237130625058145,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "calibration_size": 4,
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        10
+      ],
+      "energy_gap_finetuned_vs_control": 0.013071184769031241,
+      "actual_trace_distance_max": 0.14237130625058372,
+      "path_trace_sum_max": 0.14237130625058145,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "calibration_size": 8,
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        10
+      ],
+      "energy_gap_finetuned_vs_control": 0.013071184769031241,
+      "actual_trace_distance_max": 0.14237130625058372,
+      "path_trace_sum_max": 0.14237130625058145,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "calibration_size": 1,
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        2,
+        3,
+        10
+      ],
+      "energy_gap_finetuned_vs_control": 1.0975678138434501,
+      "actual_trace_distance_max": 0.8225892951676946,
+      "path_trace_sum_max": 1.3295884389364043,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "calibration_size": 2,
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        2,
+        10,
+        16
+      ],
+      "energy_gap_finetuned_vs_control": 0.7677995218862623,
+      "actual_trace_distance_max": 0.8361231567269086,
+      "path_trace_sum_max": 1.3867642676254859,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "calibration_size": 4,
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        10,
+        16,
+        19
+      ],
+      "energy_gap_finetuned_vs_control": 0.1965039242259614,
+      "actual_trace_distance_max": 0.8253984894697006,
+      "path_trace_sum_max": 1.345148730725501,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "calibration_size": 8,
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        10,
+        16,
+        19
+      ],
+      "energy_gap_finetuned_vs_control": 0.1965039242259614,
+      "actual_trace_distance_max": 0.8253984894697006,
+      "path_trace_sum_max": 1.345148730725501,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "calibration_size": 1,
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        2,
+        3,
+        10,
+        16
+      ],
+      "energy_gap_finetuned_vs_control": 1.1957033305980929,
+      "actual_trace_distance_max": 0.8305583861365815,
+      "path_trace_sum_max": 1.8000271777997865,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "calibration_size": 2,
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        2,
+        10,
+        16,
+        19
+      ],
+      "energy_gap_finetuned_vs_control": 1.1507325907319172,
+      "actual_trace_distance_max": 0.946097393455868,
+      "path_trace_sum_max": 2.1289199394297675,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "calibration_size": 4,
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        2,
+        10,
+        16,
+        19
+      ],
+      "energy_gap_finetuned_vs_control": 1.1507325907319172,
+      "actual_trace_distance_max": 0.946097393455868,
+      "path_trace_sum_max": 2.1289199394297675,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "calibration_size": 8,
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        2,
+        10,
+        16,
+        19
+      ],
+      "energy_gap_finetuned_vs_control": 1.1507325907319172,
+      "actual_trace_distance_max": 0.946097393455868,
+      "path_trace_sum_max": 2.1289199394297675,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    }
+  ]
+}

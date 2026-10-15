@@ -1,0 +1,256 @@
+from __future__ import annotations
+
+import argparse
+import csv
+import itertools
+import json
+import subprocess
+import sys
+import time
+from pathlib import Path
+from typing import Any, Dict, Iterable, List
+
+
+PROJECT_DIR = Path(__file__).resolve().parents[2]
+SINGLE_CONFIG_RUNNER = PROJECT_DIR / "run_baseline_comparison.py"
+
+
+def _token(value: float) -> str:
+    return f"{value:g}".replace("-", "m").replace(".", "p")
+
+
+def _config_path(rows_dir: Path, config: Dict[str, Any]) -> Path:
+    return rows_dir / (
+        f"{config['task']}_{config['dataset']}_seed{config['seed']}_"
+        f"delta{_token(config['delta'])}_sigma{_token(config['sigma'])}.json"
+    )
+
+
+def _atomic_json(path: Path, payload: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    temporary.replace(path)
+
+
+def _atomic_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
+    if not rows:
+        return
+    fields = sorted({key for row in rows for key in row})
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
+    temporary.replace(path)
+
+
+def _load_results(rows_dir: Path) -> tuple[List[Dict[str, Any]], int]:
+    results: List[Dict[str, Any]] = []
+    completed_configs = 0
+    for path in sorted(rows_dir.glob("*.json")):
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        rows = payload.get("results", [])
+        if rows:
+            completed_configs += 1
+            results.extend(rows)
+    return results, completed_configs
+
+
+def _checkpoint(output_dir: Path, meta: Dict[str, Any], started: float) -> None:
+    rows, completed_configs = _load_results(output_dir / "rows")
+    payload = {
+        "meta": meta,
+        "results": rows,
+        "completed_configs": completed_configs,
+        "completed_method_rows": len(rows),
+        "elapsed_sec": time.time() - started,
+    }
+    _atomic_json(output_dir / "fair_baseline_checkpoint.json", payload)
+    _atomic_csv(output_dir / "fair_baseline_checkpoint.csv", rows)
+
+
+def _configs(args: argparse.Namespace) -> Iterable[Dict[str, Any]]:
+    for seed, delta, sigma in itertools.product(
+        args.seeds, args.deltas, args.sigmas
+    ):
+        if "classification" in args.tasks:
+            for dataset in args.datasets:
+                yield {
+                    "task": "classification",
+                    "dataset": dataset,
+                    "n_qubits": 4 if dataset == "bas" else 8,
+                    "seed": seed,
+                    "delta": delta,
+                    "sigma": sigma,
+                }
+        if "vqe" in args.tasks:
+            yield {
+                "task": "vqe",
+                "dataset": "tfim",
+                "n_qubits": 4,
+                "seed": seed,
+                "delta": delta,
+                "sigma": sigma,
+            }
+
+
+def _command(args: argparse.Namespace, config: Dict[str, Any], row_path: Path) -> List[str]:
+    command = [
+        sys.executable,
+        "-u",
+        str(SINGLE_CONFIG_RUNNER),
+        "--task",
+        str(config["task"]),
+        "--dataset",
+        str(config["dataset"] if config["task"] == "classification" else "bas"),
+        "--output_json",
+        str(row_path),
+        "--device",
+        str(args.device),
+        "--n_qubits",
+        str(config["n_qubits"]),
+        "--depth",
+        str(args.depth),
+        "--M",
+        str(args.M),
+        "--seed",
+        str(config["seed"]),
+        "--gamma",
+        str(args.gamma),
+        "--alpha",
+        str(args.alpha),
+        "--qbeta",
+        str(args.qbeta),
+        "--delta",
+        str(config["delta"]),
+        "--rot_pool_k",
+        str(args.rot_pool_k),
+        "--rot_pool_sigma",
+        str(config["sigma"]),
+        "--include_cnot",
+    ]
+    if config["task"] == "classification":
+        command.extend(
+            [
+                "--data_dir",
+                str(args.data_dir),
+                "--n_train_pool",
+                str(args.n_train_pool),
+                "--n_val_pool",
+                str(args.n_val_pool),
+                "--bas_h",
+                str(args.bas_h),
+                "--bas_w",
+                str(args.bas_w),
+            ]
+        )
+        if not args.allow_download:
+            command.append("--no_download")
+    else:
+        command.extend(
+            [
+                "--vqe_depth",
+                str(args.vqe_depth),
+                "--vqe_steps",
+                str(args.vqe_steps),
+                "--vqe_lr",
+                str(args.vqe_lr),
+                "--J",
+                str(args.J),
+                "--h",
+                str(args.h),
+            ]
+        )
+    return command
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Resumable matched-selected-replacement fair-baseline sweep."
+    )
+    parser.add_argument("--tasks", nargs="+", choices=["classification", "vqe"], default=["classification", "vqe"])
+    parser.add_argument("--datasets", nargs="+", choices=["mnist49", "fashion_sb", "bas"], default=["mnist49", "fashion_sb", "bas"])
+    parser.add_argument("--deltas", nargs="+", type=float, default=[0.01, 0.02])
+    parser.add_argument("--sigmas", nargs="+", type=float, default=[0.001, 0.003, 0.006, 0.01])
+    parser.add_argument("--seeds", nargs="+", type=int, default=[42])
+    parser.add_argument("--output_dir", type=Path, required=True)
+    parser.add_argument("--continue_on_error", action="store_true")
+    parser.add_argument("--allow_download", action="store_true")
+    parser.add_argument("--device", default="default.qubit")
+    parser.add_argument("--depth", type=int, default=12)
+    parser.add_argument("--M", type=int, default=50)
+    parser.add_argument("--gamma", type=float, default=0.05)
+    parser.add_argument("--alpha", type=float, default=0.6)
+    parser.add_argument("--qbeta", type=float, default=0.0)
+    parser.add_argument("--rot_pool_k", type=int, default=4)
+    parser.add_argument("--data_dir", type=Path, default=PROJECT_DIR / "data")
+    parser.add_argument("--n_train_pool", type=int, default=4000)
+    parser.add_argument("--n_val_pool", type=int, default=2000)
+    parser.add_argument("--bas_h", type=int, default=4)
+    parser.add_argument("--bas_w", type=int, default=4)
+    parser.add_argument("--vqe_depth", type=int, default=6)
+    parser.add_argument("--vqe_steps", type=int, default=40)
+    parser.add_argument("--vqe_lr", type=float, default=0.1)
+    parser.add_argument("--J", type=float, default=1.0)
+    parser.add_argument("--h", type=float, default=1.0)
+    args = parser.parse_args()
+
+    args.output_dir = args.output_dir.resolve()
+    rows_dir = args.output_dir / "rows"
+    rows_dir.mkdir(parents=True, exist_ok=True)
+    configs = list(_configs(args))
+    meta = {
+        "experiment_family": "supplementary_upgrade",
+        "protocol": "fair_baselines_matched_selected_forward_replacements",
+        "runner": str(Path(__file__).resolve()),
+        "single_config_runner": str(SINGLE_CONFIG_RUNNER),
+        "grid": {
+            "tasks": args.tasks,
+            "datasets": args.datasets,
+            "deltas": args.deltas,
+            "sigmas": args.sigmas,
+            "seeds": args.seeds,
+        },
+        "expected_configs": len(configs),
+        "expected_methods_per_config": 6,
+        "candidate_L_warning": "candidate_L is reported separately and is not a gate count",
+        "checkpoint_semantics": "one immutable JSON per completed configuration; flattened CSV has one row per method",
+    }
+    started = time.time()
+    manifest = args.output_dir / "manifest.json"
+    if not manifest.exists():
+        _atomic_json(manifest, meta)
+
+    for index, config in enumerate(configs, start=1):
+        row_path = _config_path(rows_dir, config)
+        label = row_path.stem
+        if row_path.exists():
+            print(f"[SKIP {index}/{len(configs)}] {label}", flush=True)
+            continue
+        print(f"[RUN  {index}/{len(configs)}] {label}", flush=True)
+        completed = subprocess.run(
+            _command(args, config, row_path), cwd=PROJECT_DIR, check=False
+        )
+        if completed.returncode != 0:
+            print(f"[FAIL {index}/{len(configs)}] {label} exit={completed.returncode}", flush=True)
+            _checkpoint(args.output_dir, meta, started)
+            if not args.continue_on_error:
+                raise SystemExit(completed.returncode)
+            continue
+        _checkpoint(args.output_dir, meta, started)
+        print(f"[DONE {index}/{len(configs)}] {label}", flush=True)
+
+    _checkpoint(args.output_dir, meta, started)
+    rows, completed_configs = _load_results(rows_dir)
+    print(
+        f"Completed {completed_configs}/{len(configs)} configs and {len(rows)} method rows. "
+        f"Checkpoint: {args.output_dir / 'fair_baseline_checkpoint.json'}",
+        flush=True,
+    )
+
+
+if __name__ == "__main__":
+    main()

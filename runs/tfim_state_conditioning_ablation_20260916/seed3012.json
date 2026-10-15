@@ -1,0 +1,153 @@
+{
+  "meta": {
+    "protocol": "tfim_task_state_conditioning_ablation",
+    "seed": 3012,
+    "n_qubits": 4,
+    "vqe_converged": true,
+    "vqe_steps_run": 466,
+    "deltas": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "state_conditions": [
+      "correct",
+      "mismatched",
+      "random"
+    ]
+  },
+  "results": [
+    {
+      "seed": 3012,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "state_condition": "correct",
+      "matched_delete_count": 0,
+      "deleted_pos_ids": [],
+      "energy_gap_finetuned_vs_control": 0.0,
+      "actual_trace_distance_max": 0.0,
+      "path_trace_sum_max": 0.0,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3012,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "state_condition": "mismatched",
+      "matched_delete_count": 0,
+      "deleted_pos_ids": [],
+      "energy_gap_finetuned_vs_control": 0.0,
+      "actual_trace_distance_max": 0.0,
+      "path_trace_sum_max": 0.0,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3012,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "state_condition": "random",
+      "matched_delete_count": 0,
+      "deleted_pos_ids": [],
+      "energy_gap_finetuned_vs_control": 0.0,
+      "actual_trace_distance_max": 0.0,
+      "path_trace_sum_max": 0.0,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3012,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "state_condition": "correct",
+      "matched_delete_count": 0,
+      "deleted_pos_ids": [],
+      "energy_gap_finetuned_vs_control": 0.0,
+      "actual_trace_distance_max": 0.0,
+      "path_trace_sum_max": 0.0,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3012,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "state_condition": "mismatched",
+      "matched_delete_count": 0,
+      "deleted_pos_ids": [],
+      "energy_gap_finetuned_vs_control": 0.0,
+      "actual_trace_distance_max": 0.0,
+      "path_trace_sum_max": 0.0,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3012,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "state_condition": "random",
+      "matched_delete_count": 0,
+      "deleted_pos_ids": [],
+      "energy_gap_finetuned_vs_control": 0.0,
+      "actual_trace_distance_max": 0.0,
+      "path_trace_sum_max": 0.0,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3012,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "state_condition": "correct",
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        1
+      ],
+      "energy_gap_finetuned_vs_control": 0.1501716458622564,
+      "actual_trace_distance_max": 0.5291851753832273,
+      "path_trace_sum_max": 0.5291851753832276,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3012,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "state_condition": "mismatched",
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        2
+      ],
+      "energy_gap_finetuned_vs_control": 0.3739801614304543,
+      "actual_trace_distance_max": 0.7768328256495556,
+      "path_trace_sum_max": 0.7768328256495556,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3012,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "state_condition": "random",
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        1
+      ],
+      "energy_gap_finetuned_vs_control": 0.1501716458622564,
+      "actual_trace_distance_max": 0.5291851753832273,
+      "path_trace_sum_max": 0.5291851753832276,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+-r requirements.txt
+psutil>=5.9
+pypdfium2>=4
+reportlab>=4

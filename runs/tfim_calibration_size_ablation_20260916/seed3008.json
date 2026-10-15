@@ -1,0 +1,234 @@
+{
+  "meta": {
+    "protocol": "tfim_calibration_size_sensitivity",
+    "seed": 3008,
+    "n_qubits": 4,
+    "vqe_converged": true,
+    "vqe_steps_run": 692,
+    "deltas": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "calibration_sizes": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  "results": [
+    {
+      "seed": 3008,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "calibration_size": 1,
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        1
+      ],
+      "energy_gap_finetuned_vs_control": 0.030142752719885202,
+      "actual_trace_distance_max": 0.29362847987216506,
+      "path_trace_sum_max": 0.2936284798721658,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "calibration_size": 2,
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        0
+      ],
+      "energy_gap_finetuned_vs_control": 0.03544165892557771,
+      "actual_trace_distance_max": 0.41191501739853537,
+      "path_trace_sum_max": 0.4119150173985352,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "calibration_size": 4,
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.1423624574456328,
+      "actual_trace_distance_max": 0.6139372570402573,
+      "path_trace_sum_max": 0.6139372570402571,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "calibration_size": 8,
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.1423624574456328,
+      "actual_trace_distance_max": 0.6139372570402573,
+      "path_trace_sum_max": 0.6139372570402571,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "calibration_size": 1,
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        0,
+        1,
+        3
+      ],
+      "energy_gap_finetuned_vs_control": 0.20694506785518918,
+      "actual_trace_distance_max": 0.7765058250140283,
+      "path_trace_sum_max": 1.3959862460688401,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "calibration_size": 2,
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        0,
+        3,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.5928497648320095,
+      "actual_trace_distance_max": 0.8508439896066157,
+      "path_trace_sum_max": 1.7427682810197371,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "calibration_size": 4,
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        0,
+        24,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.131052191938263,
+      "actual_trace_distance_max": 0.8218487173559083,
+      "path_trace_sum_max": 1.5052460455904102,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "calibration_size": 8,
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        0,
+        24,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.131052191938263,
+      "actual_trace_distance_max": 0.8218487173559083,
+      "path_trace_sum_max": 1.5052460455904102,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "calibration_size": 1,
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        0,
+        1,
+        3,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.8412620307471137,
+      "actual_trace_distance_max": 0.8674722547788765,
+      "path_trace_sum_max": 2.027157513952176,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "calibration_size": 2,
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        0,
+        3,
+        24,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.37931051459137777,
+      "actual_trace_distance_max": 0.952576293919212,
+      "path_trace_sum_max": 2.385862299584435,
+      "physical_threshold_violations": 3,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "calibration_size": 4,
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        0,
+        1,
+        24,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.844977810088583,
+      "actual_trace_distance_max": 0.8391087412850082,
+      "path_trace_sum_max": 1.760571002904849,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3008,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "calibration_size": 8,
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        0,
+        9,
+        24,
+        26
+      ],
+      "energy_gap_finetuned_vs_control": 0.8826672804926643,
+      "actual_trace_distance_max": 0.9856562333121808,
+      "path_trace_sum_max": 2.400995744855814,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    }
+  ]
+}

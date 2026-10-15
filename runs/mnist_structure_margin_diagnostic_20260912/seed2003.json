@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "protocol": "auxiliary_margin_diagnostic_reproduces_frozen_mnist_q1_pilot",
+    "reference_json": "D:\\Duan\\Download\\V2\\qiprune_pl-mainV2\\runs\\iterative_b_mnist_qfi_pilot_20260911\\seed2003.json"
+  },
+  "results": [
+    {
+      "seed": 2003,
+      "delta": 0.5,
+      "q": 1.0,
+      "lambda": 1.0,
+      "epsilon_q": 0.25268025514207865,
+      "accepted_positions": [
+        1,
+        2,
+        4,
+        5,
+        7,
+        16,
+        18,
+        21,
+        34
+      ],
+      "L": 9,
+      "qnn_steps_run": 300,
+      "qnn_final_monitor_window_range": 0.019188130178322438,
+      "heldout_path_trace_sum_max": 1.6165515067346339,
+      "heldout_actual_trace_distance_max": 0.5984340945147834,
+      "heldout_path_bound_violations": 0,
+      "diagnostic": {
+        "n_test": 256,
+        "baseline_accuracy": 0.859375,
+        "pruned_accuracy": 0.7734375,
+        "accuracy_drop": 0.0859375,
+        "prediction_flip_count": 44,
+        "prediction_flip_rate": 0.171875,
+        "mean_baseline_margin": 1.1086318227198286,
+        "mean_baseline_margin_flipped": 0.4402903807610094,
+        "mean_baseline_margin_not_flipped": 1.2473441974659987,
+        "mean_trace_distance": 0.5330410771809084,
+        "max_trace_distance": 0.5984340945147838,
+        "mean_abs_logit_drift": 0.5244733488558369,
+        "max_abs_logit_drift": 1.3705971147104816,
+        "descriptive_pearson_trace_vs_logit_drift": 0.059604930076914114,
+        "readout_observable_norm_sum_abs_w": 16.06021632472635,
+        "readout_bound_violation_count": 0,
+        "max_logit_drift_over_readout_bound": 0.07854735097791192,
+        "margin_quartiles": [
+          {
+            "quartile": 1,
+            "n": 64,
+            "margin_min": 0.0031122060973703958,
+            "margin_max": 0.5375563105154656,
+            "mean_margin": 0.2984847973156689,
+            "mean_trace_distance": 0.5303254848134593,
+            "mean_abs_logit_drift": 0.5207325038323289,
+            "prediction_flip_rate": 0.40625,
+            "accuracy_baseline": 0.65625,
+            "accuracy_pruned": 0.46875
+          },
+          {
+            "quartile": 2,
+            "n": 64,
+            "margin_min": 0.5376918723172723,
+            "margin_max": 1.0703971682487734,
+            "mean_margin": 0.7918435197152489,
+            "mean_trace_distance": 0.5333404586316781,
+            "mean_abs_logit_drift": 0.5647580147563688,
+            "prediction_flip_rate": 0.28125,
+            "accuracy_baseline": 0.8125,
+            "accuracy_pruned": 0.65625
+          },
+          {
+            "quartile": 3,
+            "n": 64,
+            "margin_min": 1.076002688816973,
+            "margin_max": 1.56364001087607,
+            "mean_margin": 1.3078267423498349,
+            "mean_trace_distance": 0.5347451311877918,
+            "mean_abs_logit_drift": 0.5313729619484552,
+            "prediction_flip_rate": 0.0,
+            "accuracy_baseline": 0.96875,
+            "accuracy_pruned": 0.96875
+          },
+          {
+            "quartile": 4,
+            "n": 64,
+            "margin_min": 1.5665613051613894,
+            "margin_max": 2.9141160261711714,
+            "mean_margin": 2.0363722314985626,
+            "mean_trace_distance": 0.5337532340907046,
+            "mean_abs_logit_drift": 0.48102991488619473,
+            "prediction_flip_rate": 0.0,
+            "accuracy_baseline": 1.0,
+            "accuracy_pruned": 1.0
+          }
+        ]
+      }
+    },
+    {
+      "seed": 2003,
+      "delta": 0.8,
+      "q": 1.0,
+      "lambda": 1.0,
+      "epsilon_q": 0.41151684606748806,
+      "accepted_positions": [
+        1,
+        2,
+        4,
+        5,
+        7,
+        16,
+        18,
+        21,
+        22,
+        32,
+        34,
+        35,
+        37,
+        38
+      ],
+      "L": 14,
+      "qnn_steps_run": 300,
+      "qnn_final_monitor_window_range": 0.019188130178322438,
+      "heldout_path_trace_sum_max": 3.343519162194707,
+      "heldout_actual_trace_distance_max": 0.8327315270020024,
+      "heldout_path_bound_violations": 0,
+      "diagnostic": {
+        "n_test": 256,
+        "baseline_accuracy": 0.859375,
+        "pruned_accuracy": 0.7265625,
+        "accuracy_drop": 0.1328125,
+        "prediction_flip_count": 56,
+        "prediction_flip_rate": 0.21875,
+        "mean_baseline_margin": 1.1086318227198286,
+        "mean_baseline_margin_flipped": 0.599729115084848,
+        "mean_baseline_margin_not_flipped": 1.2511245808576235,
+        "mean_trace_distance": 0.7897992009175718,
+        "max_trace_distance": 0.8327315270020024,
+        "mean_abs_logit_drift": 0.6097326763824631,
+        "max_abs_logit_drift": 2.010346840067284,
+        "descriptive_pearson_trace_vs_logit_drift": 0.23193983357284614,
+        "readout_observable_norm_sum_abs_w": 16.06021632472635,
+        "readout_bound_violation_count": 0,
+        "max_logit_drift_over_readout_bound": 0.07833954890775091,
+        "margin_quartiles": [
+          {
+            "quartile": 1,
+            "n": 64,
+            "margin_min": 0.0031122060973703958,
+            "margin_max": 0.5375563105154656,
+            "mean_margin": 0.2984847973156689,
+            "mean_trace_distance": 0.7945917184550775,
+            "mean_abs_logit_drift": 0.5506419209156177,
+            "prediction_flip_rate": 0.40625,
+            "accuracy_baseline": 0.65625,
+            "accuracy_pruned": 0.46875
+          },
+          {
+            "quartile": 2,
+            "n": 64,
+            "margin_min": 0.5376918723172723,
+            "margin_max": 1.0703971682487734,
+            "mean_margin": 0.7918435197152489,
+            "mean_trace_distance": 0.7896281783649375,
+            "mean_abs_logit_drift": 0.5926821321183935,
+            "prediction_flip_rate": 0.34375,
+            "accuracy_baseline": 0.8125,
+            "accuracy_pruned": 0.59375
+          },
+          {
+            "quartile": 3,
+            "n": 64,
+            "margin_min": 1.076002688816973,
+            "margin_max": 1.56364001087607,
+            "mean_margin": 1.3078267423498349,
+            "mean_trace_distance": 0.7885314895286513,
+            "mean_abs_logit_drift": 0.6080517134773533,
+            "prediction_flip_rate": 0.09375,
+            "accuracy_baseline": 0.96875,
+            "accuracy_pruned": 0.875
+          },
+          {
+            "quartile": 4,
+            "n": 64,
+            "margin_min": 1.5665613051613894,
+            "margin_max": 2.9141160261711714,
+            "mean_margin": 2.0363722314985626,
+            "mean_trace_distance": 0.7864454173216213,
+            "mean_abs_logit_drift": 0.6875549390184881,
+            "prediction_flip_rate": 0.03125,
+            "accuracy_baseline": 1.0,
+            "accuracy_pruned": 0.96875
+          }
+        ]
+      }
+    }
+  ]
+}

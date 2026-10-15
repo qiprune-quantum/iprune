@@ -1,0 +1,22 @@
+{
+  "n_qubits": 4,
+  "depth": 4,
+  "seed": 3002,
+  "delta": 1.2,
+  "method": "iprune",
+  "repeat": 2,
+  "elapsed_ms": 383.5452,
+  "baseline_rss_mib": 139.15625,
+  "peak_rss_mib": 139.265625,
+  "peak_increment_mib": 0.109375,
+  "deletion_count": 3,
+  "selected_positions": [
+    1,
+    9,
+    26
+  ],
+  "rotation_count": 16,
+  "training_steps": 415,
+  "python": "3.9.25",
+  "platform": "Windows-10-10.0.26200-SP0"
+}

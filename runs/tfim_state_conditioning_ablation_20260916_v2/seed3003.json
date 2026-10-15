@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "protocol": "tfim_task_state_conditioning_ablation",
+    "seed": 3003,
+    "n_qubits": 4,
+    "vqe_converged": true,
+    "vqe_steps_run": 398,
+    "deltas": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "state_conditions": [
+      "correct",
+      "mismatched",
+      "random"
+    ]
+  },
+  "results": [
+    {
+      "seed": 3003,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "state_condition": "correct",
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        10
+      ],
+      "energy_gap_finetuned_vs_control": 0.013071184769031241,
+      "actual_trace_distance_max": 0.14237130625058372,
+      "path_trace_sum_max": 0.14237130625058145,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "state_condition": "mismatched",
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        10
+      ],
+      "energy_gap_finetuned_vs_control": 0.013071184769031241,
+      "actual_trace_distance_max": 0.14237130625058372,
+      "path_trace_sum_max": 0.14237130625058145,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "state_condition": "random",
+      "matched_delete_count": 1,
+      "deleted_pos_ids": [
+        10
+      ],
+      "energy_gap_finetuned_vs_control": 0.013071184769031241,
+      "actual_trace_distance_max": 0.14237130625058372,
+      "path_trace_sum_max": 0.14237130625058145,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "state_condition": "correct",
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        3,
+        10,
+        16
+      ],
+      "energy_gap_finetuned_vs_control": 0.02704453539827334,
+      "actual_trace_distance_max": 0.4881366312149912,
+      "path_trace_sum_max": 1.0304675878026843,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "state_condition": "mismatched",
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        2,
+        10,
+        16
+      ],
+      "energy_gap_finetuned_vs_control": 0.7677995218862623,
+      "actual_trace_distance_max": 0.8361231567269086,
+      "path_trace_sum_max": 1.3867642676254859,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "state_condition": "random",
+      "matched_delete_count": 3,
+      "deleted_pos_ids": [
+        10,
+        16,
+        24
+      ],
+      "energy_gap_finetuned_vs_control": 0.4309678531950585,
+      "actual_trace_distance_max": 0.7241994638127589,
+      "path_trace_sum_max": 1.2377764732149257,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "state_condition": "correct",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        1,
+        3,
+        10,
+        16
+      ],
+      "energy_gap_finetuned_vs_control": 0.03947204378086866,
+      "actual_trace_distance_max": 0.6469960588934717,
+      "path_trace_sum_max": 1.5932898628476975,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "state_condition": "mismatched",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        0,
+        2,
+        10,
+        16
+      ],
+      "energy_gap_finetuned_vs_control": 0.6751910543711581,
+      "actual_trace_distance_max": 0.8406361112436748,
+      "path_trace_sum_max": 2.0384860259912694,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3003,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "state_condition": "random",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        10,
+        16,
+        19,
+        24
+      ],
+      "energy_gap_finetuned_vs_control": 0.5855480147541501,
+      "actual_trace_distance_max": 0.8820783567858046,
+      "path_trace_sum_max": 2.3158076619106263,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    }
+  ]
+}

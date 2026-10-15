@@ -1,0 +1,20 @@
+{
+  "protocol": "dynamic sequential direct-energy deletion with iPrune-matched deletion counts and identical 40-step recovery",
+  "seeds": [3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010, 3011, 3012],
+  "within_seed_deltas": [0.8, 1.0, 1.2],
+  "n_independent_seeds": 12,
+  "final_energy_gap_mean": 0.1653096357,
+  "final_energy_gap_sample_sd": 0.1299033878,
+  "final_energy_gap_t95_ci": [0.0827729608, 0.2478463106],
+  "paired_vs_iprune": {
+    "mean_difference_dynamic_minus_iprune": -0.03881095,
+    "wilcoxon_two_sided_p": 0.42578125,
+    "paired_t_two_sided_p": 0.24635749
+  },
+  "paired_vs_static_task_probe": {
+    "mean_difference_dynamic_minus_static": -0.02513670,
+    "wilcoxon_two_sided_p": 0.49609375,
+    "paired_t_two_sided_p": 0.27747383
+  },
+  "checkpoint_signature_checks": "12/12 passed"
+}

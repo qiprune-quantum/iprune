@@ -1,0 +1,57 @@
+{
+  "scope": "TFIM, depth 4, delta=0.5; exact-state path selection; conventional compute-uncompute overlap and energy measurement accounting",
+  "assumptions": [
+    "One overlap circuit and one measurement setting per iPrune candidate rotation.",
+    "One shared baseline circuit plus one deleted circuit per direct energy-probe candidate.",
+    "TFIM energy uses two commuting measurement bases: all Z_i Z_{i+1} terms in Z and all X_i terms in X.",
+    "No state-preparation, transpilation, mitigation, adaptive allocation, or confidence-control overhead is included.",
+    "The fixed-path audit count is reported separately and must not be added to selection when selection outcomes are retained for certification."
+  ],
+  "rows": [
+    {
+      "n_qubits": 4,
+      "independent_seeds": 3,
+      "rotations_inspected": 16,
+      "mean_accepted_deletions": 1.3333333333333333,
+      "shots_per_setting": 1000,
+      "iprune_overlap_settings": 16,
+      "iprune_selection_shots": 16000,
+      "iprune_fixed_path_audit_shots_mean": 1333.3333333333333,
+      "energy_probe_grouped_settings": 34,
+      "energy_probe_grouped_shots": 34000,
+      "energy_probe_termwise_settings": 136,
+      "energy_probe_termwise_shots": 136000,
+      "grouped_energy_to_overlap_shot_ratio": 2.125
+    },
+    {
+      "n_qubits": 6,
+      "independent_seeds": 3,
+      "rotations_inspected": 24,
+      "mean_accepted_deletions": 1.6666666666666667,
+      "shots_per_setting": 1000,
+      "iprune_overlap_settings": 24,
+      "iprune_selection_shots": 24000,
+      "iprune_fixed_path_audit_shots_mean": 1666.6666666666667,
+      "energy_probe_grouped_settings": 50,
+      "energy_probe_grouped_shots": 50000,
+      "energy_probe_termwise_settings": 300,
+      "energy_probe_termwise_shots": 300000,
+      "grouped_energy_to_overlap_shot_ratio": 2.0833333333333335
+    },
+    {
+      "n_qubits": 8,
+      "independent_seeds": 3,
+      "rotations_inspected": 32,
+      "mean_accepted_deletions": 2.6666666666666665,
+      "shots_per_setting": 1000,
+      "iprune_overlap_settings": 32,
+      "iprune_selection_shots": 32000,
+      "iprune_fixed_path_audit_shots_mean": 2666.6666666666665,
+      "energy_probe_grouped_settings": 66,
+      "energy_probe_grouped_shots": 66000,
+      "energy_probe_termwise_settings": 528,
+      "energy_probe_termwise_shots": 528000,
+      "grouped_energy_to_overlap_shot_ratio": 2.0625
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "protocol": "tfim_task_state_conditioning_ablation",
+    "seed": 3005,
+    "n_qubits": 4,
+    "vqe_converged": true,
+    "vqe_steps_run": 932,
+    "deltas": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "state_conditions": [
+      "correct",
+      "mismatched",
+      "random"
+    ]
+  },
+  "results": [
+    {
+      "seed": 3005,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "state_condition": "correct",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        0,
+        3,
+        26,
+        27
+      ],
+      "energy_gap_finetuned_vs_control": 0.25800577192585106,
+      "actual_trace_distance_max": 0.4356019499378225,
+      "path_trace_sum_max": 0.9914163276594401,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3005,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "state_condition": "mismatched",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        3,
+        16,
+        26,
+        27
+      ],
+      "energy_gap_finetuned_vs_control": 0.45728847347440293,
+      "actual_trace_distance_max": 0.7475121969964025,
+      "path_trace_sum_max": 1.7919776687637972,
+      "physical_threshold_violations": 2,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3005,
+      "delta": 0.8,
+      "q": 1.0,
+      "epsilon": 0.41151684606748806,
+      "state_condition": "random",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        3,
+        25,
+        26,
+        27
+      ],
+      "energy_gap_finetuned_vs_control": 0.16204494787295687,
+      "actual_trace_distance_max": 0.7841955962106407,
+      "path_trace_sum_max": 1.4237550890816384,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3005,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "state_condition": "correct",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        0,
+        3,
+        26,
+        27
+      ],
+      "energy_gap_finetuned_vs_control": 0.25800577192585106,
+      "actual_trace_distance_max": 0.4356019499378225,
+      "path_trace_sum_max": 0.9914163276594401,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3005,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "state_condition": "mismatched",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        3,
+        16,
+        26,
+        27
+      ],
+      "energy_gap_finetuned_vs_control": 0.45728847347440293,
+      "actual_trace_distance_max": 0.7475121969964025,
+      "path_trace_sum_max": 1.7919776687637972,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3005,
+      "delta": 1.0,
+      "q": 1.0,
+      "epsilon": 0.5235987755982989,
+      "state_condition": "random",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        3,
+        25,
+        26,
+        27
+      ],
+      "energy_gap_finetuned_vs_control": 0.16204494787295687,
+      "actual_trace_distance_max": 0.7841955962106407,
+      "path_trace_sum_max": 1.4237550890816384,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3005,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "state_condition": "correct",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        0,
+        3,
+        26,
+        27
+      ],
+      "energy_gap_finetuned_vs_control": 0.25800577192585106,
+      "actual_trace_distance_max": 0.4356019499378225,
+      "path_trace_sum_max": 0.9914163276594401,
+      "physical_threshold_violations": 0,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3005,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "state_condition": "mismatched",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        3,
+        16,
+        26,
+        27
+      ],
+      "energy_gap_finetuned_vs_control": 0.45728847347440293,
+      "actual_trace_distance_max": 0.7475121969964025,
+      "path_trace_sum_max": 1.7919776687637972,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    },
+    {
+      "seed": 3005,
+      "delta": 1.2,
+      "q": 1.0,
+      "epsilon": 0.6435011087932844,
+      "state_condition": "random",
+      "matched_delete_count": 4,
+      "deleted_pos_ids": [
+        3,
+        25,
+        26,
+        27
+      ],
+      "energy_gap_finetuned_vs_control": 0.16204494787295687,
+      "actual_trace_distance_max": 0.7841955962106407,
+      "path_trace_sum_max": 1.4237550890816384,
+      "physical_threshold_violations": 1,
+      "path_bound_violations": 0
+    }
+  ]
+}

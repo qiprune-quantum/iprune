@@ -1,0 +1,48 @@
+{
+  "legacy_dir": "runs\\tfim_pruning_transition_formal_dense_20260915",
+  "physical_dir": "n6_n8_lab_bundle_20260916\\runs\\tfim_n4_physical_q1_20260924",
+  "seeds": 12,
+  "seed_threshold_rows": 252,
+  "changed_paths": 2,
+  "changed_seed_count": 2,
+  "changed_rows": [
+    {
+      "seed": 3001,
+      "delta": 1.15,
+      "changed_path": true,
+      "old_positions": [
+        1,
+        24,
+        25,
+        26
+      ],
+      "physical_positions": [
+        1,
+        8,
+        24,
+        25,
+        26
+      ],
+      "old_final_gap": 0.39718494810518123,
+      "physical_final_gap": 1.7472548350376842
+    },
+    {
+      "seed": 3004,
+      "delta": 1.05,
+      "changed_path": true,
+      "old_positions": [
+        9,
+        24
+      ],
+      "physical_positions": [
+        0,
+        9,
+        24
+      ],
+      "old_final_gap": 0.08335654781502733,
+      "physical_final_gap": 0.3663170657906303
+    }
+  ],
+  "legacy_mean_final_gap": 0.7533890247755474,
+  "physical_mean_final_gap": 0.7598693041601032
+}
