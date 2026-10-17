@@ -1,0 +1,28 @@
+{
+  "n_qubits": 8,
+  "depth": 4,
+  "seed": 3003,
+  "delta": 1.2,
+  "method": "dynamic",
+  "repeat": 1,
+  "q": 1.0,
+  "elapsed_ms": 2607.6347,
+  "baseline_rss_mib": 139.66796875,
+  "peak_rss_mib": 139.71875,
+  "peak_increment_mib": 0.05078125,
+  "deletion_count": 8,
+  "selected_positions": [
+    0,
+    1,
+    6,
+    7,
+    48,
+    49,
+    52,
+    55
+  ],
+  "rotation_count": 32,
+  "training_steps": 8479,
+  "python": "3.9.25",
+  "platform": "Windows-10-10.0.26200-SP0"
+}

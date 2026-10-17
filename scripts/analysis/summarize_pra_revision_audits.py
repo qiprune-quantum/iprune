@@ -21,6 +21,9 @@ def load_records(directory: Path):
     for path in sorted(directory.glob("*.json")):
         with path.open(encoding="utf-8") as handle:
             payload = json.load(handle)
+        # Manifests and aggregate audit files are metadata, not result rows.
+        if "results" not in payload:
+            continue
         records.extend(payload["results"])
     return records
 
@@ -31,7 +34,7 @@ def pm(values):
 
 
 def phase_tightness():
-    records = load_records(RUNS / "tfim_pruning_phase_pilot_20260915")
+    records = load_records(RUNS / "tfim_n4_physical_q1_20260924")
     grouped = defaultdict(list)
     for row in records:
         bound = min(1.0, row["realized_path_trace_sum_max"])
@@ -77,7 +80,7 @@ def multiscale():
         "gradient_integrated_energy_matched_k",
         "random_matched_l",
     ]
-    print("\n[multiscale matched-count final gaps across 3 independently optimized checkpoints]")
+    print("\n[historical dual-rule q=1.030454533953517 multiscale matched-count final gaps across 3 independently optimized checkpoints]")
     for key in sorted(grouped):
         first = grouped[key]["qiprune_iterative_hybrid_path"]
         counts = [row["matched_delete_count"] for row in first]
@@ -87,7 +90,7 @@ def multiscale():
             f"{pm([row['energy_gap_finetuned_vs_control'] for row in grouped[key][name]])}"
             for name in names
         )
-        print(f"N={key[0]}, delta={key[1]}; K={pm(counts)}; pruned={pm(fractions)}: {cells}")
+        print(f"N={key[0]}, delta={key[1]}; L={pm(counts)}; pruned={pm(fractions)}: {cells}")
 
 
 if __name__ == "__main__":

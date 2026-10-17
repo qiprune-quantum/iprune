@@ -1,7 +1,7 @@
 # iPrune
 
 Code for *Realized-path state-change certificates for task-conditioned
-quantum-circuit pruning*. Snapshot: 2026-10-15, manuscript r5.
+quantum-circuit pruning*. Local review snapshot: 2026-10-17, manuscript r26. This local package has not been pushed to GitHub.
 
 ## Layout
 ```
@@ -58,7 +58,7 @@ python -m scripts.experiments.run_tfim_pruning_phase_seed --help
 ```
 Example small run (not a substitute for the paper's full protocol):
 ```
-python -m scripts.experiments.run_tfim_pruning_phase_seed --seed 3001 --n_qubits 4 --deltas 0.6 --output_json outputs/tfim_seed3001.json
+python -m scripts.experiments.run_tfim_pruning_phase_seed --seed 3001 --n_qubits 4 --qbeta 0.0 --deltas 0.6 --output_json outputs/tfim_seed3001.json
 ```
 Dynamic objective control on an archived checkpoint:
 ```
@@ -67,8 +67,7 @@ python -m scripts.experiments.run_tfim_dynamic_objective_baseline --source_json 
 Use fresh output paths. Optimization may be expensive; do not overwrite archives.
 
 ## Protocol boundaries
-The physical selector uses q=1. Historical weighted/dual rules are separate
-sensitivity experiments. Seeds are independent replicates; gates, thresholds
+Algorithm 1 uses q=1. The main multiscale matched-count table retains historical dual-rule records with q=1.030454533953517; both weighted and physical angles must pass. Other historical records are retained for provenance. Do not describe the multiscale table as physical-only q=1. Seeds are independent replicates; gates, thresholds
 and synthetic shot trials within a checkpoint are repeated measurements.
 The multiscale table uses seeds 4001–4003, N=4,6,8,10 and thresholds 0.6,1.0.
 The certificate controls immediate state disturbance on the realized path.
@@ -96,12 +95,12 @@ They do not contain every intermediate state vector from every training step.
 
 | Manuscript result | Archived input under the repository root |
 |---|---|
-| Primary 12-seed TFIM scan and certificate tightness | `runs/tfim_pruning_phase_pilot_20260915/` |
+| Physical-only 12-seed TFIM scan and certificate tightness | `runs/tfim_n4_physical_q1_20260924/` |
 | Primary matched-count baselines | `runs/formal_tfim_d4_dynamic_q1_20260911/`, `runs/formal_mnist49_dynamic_q1_20260911/` |
 | Dynamic sequential objective baseline | `runs/tfim_dynamic_objective_baseline_20261015/` |
 | Prefix update and task-state mechanism | `runs/tfim_order_greedy_ablation_20260916/`, `runs/tfim_state_conditioning_ablation_20260916_v2/` |
 | QFI comparison and heatmap | `runs/qfi_iprune_gatelevel_n4_20260916/`, `runs/qfi_iprune_gatelevel_n6_20260916/` (including `gate_level_results.csv`) |
-| Multi-size matched-count comparison | `runs/tfim_scale_matched_baselines_20260923/`, `runs/tfim_n10_matched_baselines_20260923/` |
+| Historical dual-rule multi-size matched-count comparison (q=1.030454533953517) | `runs/tfim_scale_matched_baselines_20260923/`, `runs/tfim_n10_matched_baselines_20260923/` |
 | Physical q=1 size and connectivity scans | `runs/tfim_n4_physical_q1_20260924/`, `runs/tfim_n6_physical_q1_20260924/`, `runs/tfim_n8_physical_q1_20260924/`, `runs/tfim_n4_linear_physical_q1_20260924/`, `runs/tfim_n4_alltoall_physical_q1_20260924/` |
 | Path-budget and calibration-size controls | `runs/tfim_path_budget_ablation_20260916/`, `runs/tfim_calibration_size_ablation_20260916/`, `runs/iterative_b_mnist_calibration_size_pilot_20260911/` |
 | MNIST task-state and held-out audits | `results/task_conditioning_ablation_20260811/mnist49/`, `results/certificate_generalization_20260812/` |
@@ -130,3 +129,36 @@ python -m scripts.experiments.benchmark_shot_overlap --root runs/selection_cost_
 ```
 This last command writes an audit file under the specified root. Use a copy of
 that directory if you wish to retain the bundled archive byte-for-byte.
+
+### Matched selection timing, including the dynamic objective probe
+
+`runs/selection_cost_dynamic_20261016/` contains a fresh comparison on the saved
+TFIM checkpoints (N=4,6,8; seeds 3001-3003; delta=1.2). All three selectors
+receive the same realized iPrune deletion count. Each fresh process warms its
+selector, then times one selection call and samples peak process RSS. Three
+repetitions per checkpoint are summarized by their median. Training and target-count
+setup are excluded. These timings compare the current implementations, not
+hardware execution or equal-cost oracle primitives.
+
+```
+python -m scripts.experiments.benchmark_selection_cost run --root runs/selection_cost_dynamic_20261016 --sizes 4 6 8 --seeds 3001 3002 3003 --delta 1.2 --repeats 3
+```
+
+Existing raw outputs are preserved; use a new root with copies of the saved
+`checkpoints/` to repeat the benchmark. Historical `qiprune` identifiers and
+q-weighted diagnostic labels are retained for archive compatibility. The main
+physical selector is iPrune with q=1; historical labels do not imply a demonstrated
+advantage from q deformation.
+
+### Implementation provenance
+
+There is no separate Supplemental Material in manuscript r26. Required design
+and sampling conventions are given in the main article. The dynamic objective
+control retains per-step candidate counts, selected positions and objective
+increments; reconstructed checkpoint signatures were checked against the 12
+archived unpruned circuits. Multiscale seeds 4001-4003 are distinct from the
+12-seed primary TFIM scan; the incompletely covered historical third threshold
+is excluded from the multiscale table. Fixed-path shot tests draw 1000 synthetic
+Bernoulli trials per checkpoint and shot budget using three independent training
+seeds per size. They apply a one-sided tail probability 0.05/L per accepted
+overlap and do not implement adaptive shot-based selection.

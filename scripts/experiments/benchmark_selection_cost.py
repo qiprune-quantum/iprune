@@ -2,8 +2,8 @@
 
 Training is deliberately excluded from selection measurements.  Each selector
 runs in a fresh process after imports and checkpoint loading, so its peak RSS
-and elapsed time measure the same stage.  The direct probe is the manuscript's
-one-shot single-gate energy ranking, truncated to iPrune's realized L.
+and elapsed time measure the same stage. Static and dynamic direct-energy
+probes are matched to iPrune's realized L. Target-count setup is excluded.
 """
 
 from __future__ import annotations
@@ -19,6 +19,9 @@ from pathlib import Path
 
 import numpy as np
 import psutil
+import pennylane as qml
+from iprune.experiments.tasks_vqe import tfim_hamiltonian
+from scripts.experiments.run_tfim_dynamic_objective_baseline import sequential_objective_deletion
 
 from iprune.experiments.protocol import PaperProtocolConfig, make_q_geometry, simulate_outputs
 from iprune.experiments.tasks_vqe import VQEConfig, optimize_vqe_parameters_with_diagnostics
@@ -98,7 +101,8 @@ def worker(root: Path, n: int, seed: int, delta: float, method: str, repeat: int
         gamma=0.05, alpha=0.6, qbeta=0.0, delta=delta,
         rot_pool_k=1, rot_pool_sigma=0.0, include_cnot=True,
     )
-    _, _, gq_diag, _, epsilon = make_q_geometry(config)
+    _, q_value, gq_diag, _, epsilon = make_q_geometry(config)
+    assert q_value == 1.0 and np.allclose(gq_diag, 1.0), "Physical q=1 required"
 
     def run_iprune():
         return q_iPrune_iterative_identity_audited(
@@ -113,22 +117,34 @@ def worker(root: Path, n: int, seed: int, delta: float, method: str, repeat: int
             n_qubits=n, J=1.0, h=1.0, device="default.qubit",
         )
 
-    # Warm up the chosen code path before measuring Python/PennyLane execution.
-    warm = run_iprune() if method == "iprune" else run_probe()
-    measured, elapsed_ms, base_rss, peak_rss = monitored_call(
-        run_iprune if method == "iprune" else run_probe
-    )
+    # All methods receive the same iPrune count; obtaining that target is setup.
+    target = len(run_iprune().accepted_positions)
+    hamiltonian = np.asarray(qml.matrix(tfim_hamiltonian(n, 1.0, 1.0), wire_order=range(n)), dtype=np.complex128)
+
+    def run_dynamic():
+        return sequential_objective_deletion(
+            baseline_circuit=baseline_circuit, initial_state=initial_state,
+            n_qubits=n, delete_count=target, hamiltonian=hamiltonian,
+            device="default.qubit",
+        )
+
+    callback = {"iprune": run_iprune, "probe": run_probe, "dynamic": run_dynamic}[method]
+    warm = callback()
+    measured, elapsed_ms, base_rss, peak_rss = monitored_call(callback)
     if method == "iprune":
         selected = list(measured.accepted_positions)
-        deletion_count = len(selected)
         assert selected == list(warm.accepted_positions)
+    elif method == "dynamic":
+        selected = list(measured[1])
+        assert selected == list(warm[1])
+        assert len(selected) == target
     else:
-        selected = list(measured[0])
-        deletion_count = None
-        assert selected == list(warm[0])
+        selected = list(measured[0])[:target]
+        assert selected == list(warm[0])[:target]
+    deletion_count = target
     payload = {
         "n_qubits": n, "depth": 4, "seed": seed, "delta": delta,
-        "method": method, "repeat": repeat,
+        "method": method, "repeat": repeat, "q": q_value,
         "elapsed_ms": elapsed_ms,
         "baseline_rss_mib": base_rss / 2**20,
         "peak_rss_mib": peak_rss / 2**20,
@@ -158,7 +174,7 @@ def run(root: Path, sizes: list[int], seeds: list[int], delta: float, repeats: i
                 check=True,
             )
             for repeat in range(1, repeats + 1):
-                for method in ("iprune", "probe"):
+                for method in ("iprune", "probe", "dynamic"):
                     output = root / "raw" / f"n{n}_seed{seed}_{method}_r{repeat}.json"
                     if output.exists():
                         continue
@@ -181,7 +197,7 @@ def main() -> None:
     parser.add_argument("--delta", type=float, default=1.2)
     parser.add_argument("--repeats", type=int, default=3)
     parser.add_argument("--steps", type=int, default=5000)
-    parser.add_argument("--method", choices=["iprune", "probe"])
+    parser.add_argument("--method", choices=["iprune", "probe", "dynamic"])
     parser.add_argument("--repeat", type=int)
     args = parser.parse_args()
     if args.mode == "train":
